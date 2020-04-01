@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="quiz.css">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <!-- Q1 -->
+      <div class="qblock q1block">
+        <div class="qtitle">
+          Q.1
+        </div>
+        <div class="qquestion">
+          test
+        </div>
+        <div class="qchose">
+          <div class="qchoseblock">
+            <div class="qchosebox">
+              <input class="box" type="checkbox" name="11" value="11" onclick="c11()">あいうえお
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox">
+              <input class="box" type="checkbox" name="12" value="12" onclick="c12()">かい
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox">
+              <input class="box" type="checkbox" name="13" value="13" onclick="c13()">さし
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox">
+              <input class="box" type="checkbox" name="14" value="14" onclick="c14()">すええ
+            </div>
+          </div>
+        </div>
+        <input class="submit" type="button" name="" value="回答" onclick="c1sub()">
+        <div class="qanswer q1answer" id="q1answer">
+          <div class="qanswertitle">
+            答え : <span class="qanswertitlein">aiu</span>
+          </div>
+          <div class="qanswerdesc">
+            aiueo
+          </div>
+          <input class="next" type="button" name="" value="次へ" onclick="q1next()">
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="qblock q2block" id="q2block">
+        <div class="qtitle">
+          Q.2
+        </div>
+        <div class="qquestion">
+          test
+        </div>
+        <div class="qchose">
+          <div class="qchoseblock">
+            <div class="qchosebox">
+              <input class="box" type="checkbox" name="21" value="21" onclick="c21()">あいうえお
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox">
+              <input class="box" type="checkbox" name="22" value="22" onclick="c22()">かい
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox">
+              <input class="box" type="checkbox" name="23" value="23" onclick="c23()">さし
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox">
+              <input class="box" type="checkbox" name="24" value="24" onclick="c24()">すええ
+            </div>
+          </div>
+        </div>
+        <input class="submit" type="button" name="" value="回答" onclick="c2sub()">
+        <div class="qanswer q2answer" id="q2answer">
+          <div class="qanswertitle">
+            答え : <span class="qanswertitlein">aiu</span>
+          </div>
+          <div class="qanswerdesc">
+            aiueo
+          </div>
+          <input class="next" type="button" name="" value="次へ" onclick="q2next()">
+        </div>
+      </div>
+      <!-- Q3 -->
+      <div class="qblock q3block" id="q3block">
+        <div class="qtitle">
+          Q.3
+        </div>
+        <div class="qquestion">
+          test
+        </div>
+        <div class="qchose">
+          <div class="qchoseblock">
+            <div class="qchosebox">
+              <input class="box" type="checkbox" name="31" value="31" onclick="c31()">あいうえお
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox">
+              <input class="box" type="checkbox" name="32" value="32" onclick="c32()">かい
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox">
+              <input class="box" type="checkbox" name="33" value="33" onclick="c33()">さし
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox">
+              <input class="box" type="checkbox" name="34" value="34" onclick="c34()">すええ
+            </div>
+          </div>
+        </div>
+        <input class="submit" type="button" name="" value="回答" onclick="c3sub()">
+        <div class="qanswer q3answer" id="q3answer">
+          <div class="qanswertitle">
+            答え : <span class="qanswertitlein">aiu</span>
+          </div>
+          <div class="qanswerdesc">
+            aiueo
+          </div>
+          <input class="next" type="button" name="" value="次へ" onclick="q3next()">
+        </div>
+      </div>
+    </header>
+    <main>
+
+    </main>
+    <footer></footer>
+  </body>
+</html>
+
+<script type="text/javascript">
+  // Q1
+  var q1 = 0, q11 = 0, q12 = 0, q13 = 0, q14 = 0, q1sub = 0;
+  function c11(){
+    if (q11 == 0){
+      q11 = 1;
+    }else{
+      q11 = 0;
+    }
+  }
+  function c12(){
+    if (q12 == 0){
+      q12 = 1;
+    }else{
+      q12 = 0;
+    }
+  }
+  function c13(){
+    if (q13 == 0){
+      q13 = 1;
+    }else{
+      q13 = 0;
+    }
+  }
+  function c14(){
+    if (q14 == 0){
+      q14 = 1;
+    }else{
+      q14 = 0;
+    }
+  }
+  function c1sub(){
+    if (q1sub == 0){
+      // answer:
+      if (q11 == 1){
+        if (q12 == 0){
+          if (q13 == 0){
+            if (q14 == 0){
+              q1 = 1;
+            }else{
+              q1 = 2;
+            }
+          }
+          else{
+            q1 = 2;
+          }
+        }
+        else{
+          q1 = 2;
+        }
+      }else{
+        q1 = 2;
+      }
+      q1sub = 1;
+      q1check();
+      document.getElementById("q1answer").style.display = "block";
+    }else{
+    }
+  }
+  function q1check(){
+    if (q1 == 1){
+    }else{
+    }
+  }
+  function q1next(){
+    document.getElementById("q2block").style.display = "block";
+  }
+
+  // Q2
+  var q2 = 0, q21 = 0, q22 = 0, q23 = 0, q24 = 0, q2sub = 0;
+  function c21(){
+    if (q21 == 0){
+      q21 = 1;
+    }else{
+      q21 = 0;
+    }
+  }
+  function c22(){
+    if (q22 == 0){
+      q22 = 1;
+    }else{
+      q22 = 0;
+    }
+  }
+  function c23(){
+    if (q23 == 0){
+      q23 = 1;
+    }else{
+      q23 = 0;
+    }
+  }
+  function c24(){
+    if (q24 == 0){
+      q24 = 1;
+    }else{
+      q24 = 0;
+    }
+  }
+  function c2sub(){
+    if (q2sub == 0){
+      // answer:
+      if (q21 == 1){
+        if (q22 == 0){
+          if (q23 == 0){
+            if (q24 == 0){
+              q2 = 1;
+            }else{
+              q2 = 2;
+            }
+          }
+          else{
+            q2 = 2;
+          }
+        }
+        else{
+          q2 = 2;
+        }
+      }else{
+        q2 = 2;
+      }
+      q2sub = 1;
+      q2check();
+      document.getElementById("q2answer").style.display = "block";
+    }else{
+    }
+  }
+  function q2check(){
+    if (q2 == 1){
+    }else{
+    }
+  }
+  function q2next(){
+    document.getElementById("q3block").style.display = "block";
+  }
+
+  // Q3
+  var q3 = 0, q31 = 0, q32 = 0, q33 = 0, q34 = 0, q3sub = 0;
+  function c31(){
+    if (q31 == 0){
+      q31 = 1;
+    }else{
+      q31 = 0;
+    }
+  }
+  function c32(){
+    if (q32 == 0){
+      q32 = 1;
+    }else{
+      q32 = 0;
+    }
+  }
+  function c33(){
+    if (q33 == 0){
+      q33 = 1;
+    }else{
+      q33 = 0;
+    }
+  }
+  function c34(){
+    if (q34 == 0){
+      q34 = 1;
+    }else{
+      q34 = 0;
+    }
+  }
+  function c3sub(){
+    if (q3sub == 0){
+      // answer:
+      if (q31 == 1){
+        if (q32 == 0){
+          if (q33 == 0){
+            if (q34 == 0){
+              q3 = 1;
+            }else{
+              q3 = 2;
+            }
+          }
+          else{
+            q3 = 2;
+          }
+        }
+        else{
+          q3 = 2;
+        }
+      }else{
+        q3 = 2;
+      }
+      q3sub = 1;
+      console.log("test");
+      q3check();
+      document.getElementById("q3answer").style.display = "block";
+    }else{
+    }
+  }
+  function q3check(){
+    if (q2 == 1){
+    }else{
+    }
+  }
+  function q3next(){
+    document.getElementById("q4block").style.display = "block";
+  }
+
+</script>
