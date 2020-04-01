@@ -7,44 +7,49 @@
   </head>
   <body>
     <header>
-      <div class="header-title" align="center">
-        ぴよっ
+      <div class="header-title text middle" data-text="ぴよっ" align="center">
+      </div>
+      <div class="memo" style="font-size: 2em">
+        メモ<br>
+        全部答え一番上だけ<br>
       </div>
     </header>
     <main>
       <!-- Q1 -->
-      <div class="qblock q1block">
+      <div class="qblock q1block" id="q1block">
         <div class="qtitle">
           Q.1
         </div>
         <div class="qquestion">
-          test
+          Prototype
         </div>
         <div class="qchose">
           <div class="qchoseblock">
-            <div class="qchosebox">
-              <input class="box" type="checkbox" name="11" value="11" onclick="c11()">あいうえお
+            <div class="qchosebox"  id="q11">
+              <input class="box" type="checkbox" name="11" value="11" onclick="c11()"><label>aaa</label>
             </div>
           </div>
           <div class="qchoseblock">
-            <div class="qchosebox">
-              <input class="box" type="checkbox" name="12" value="12" onclick="c12()">かい
+            <div class="qchosebox" id="q12">
+              <input class="box" type="checkbox" name="12" value="12" onclick="c12()"><label>bbb</label>
             </div>
           </div>
           <div class="qchoseblock">
-            <div class="qchosebox">
-              <input class="box" type="checkbox" name="13" value="13" onclick="c13()">さし
+            <div class="qchosebox" id="q13">
+              <input class="box" type="checkbox" name="13" value="13" onclick="c13()"><label>ccc</label>
             </div>
           </div>
           <div class="qchoseblock">
-            <div class="qchosebox">
-              <input class="box" type="checkbox" name="14" value="14" onclick="c14()">すええ
+            <div class="qchosebox" id="q14">
+              <input class="box" type="checkbox" name="14" value="14" onclick="c14()"><label>ddd</label>
             </div>
           </div>
         </div>
         <input class="submit" type="button" name="" value="回答" onclick="c1sub()">
         <div class="qanswer q1answer" id="q1answer">
-          <div class="qanswertitle">
+          <div class="qtf" id="q1tf">
+          </div>
+          <div class="qanswertitle" id="q1at">
             答え : <span class="qanswertitlein">aiu</span>
           </div>
           <div class="qanswerdesc">
@@ -60,33 +65,35 @@
           Q.2
         </div>
         <div class="qquestion">
-          test
+          Prototype
         </div>
         <div class="qchose">
           <div class="qchoseblock">
-            <div class="qchosebox">
-              <input class="box" type="checkbox" name="21" value="21" onclick="c21()">あいうえお
+            <div class="qchosebox" id="q21">
+              <input class="box" type="checkbox" name="21" value="21" onclick="c21()"><label>aaa</label>
             </div>
           </div>
           <div class="qchoseblock">
-            <div class="qchosebox">
-              <input class="box" type="checkbox" name="22" value="22" onclick="c22()">かい
+            <div class="qchosebox" id="q22">
+              <input class="box" type="checkbox" name="22" value="22" onclick="c22()"><label>bbb</label>
             </div>
           </div>
           <div class="qchoseblock">
-            <div class="qchosebox">
-              <input class="box" type="checkbox" name="23" value="23" onclick="c23()">さし
+            <div class="qchosebox" id="q23">
+              <input class="box" type="checkbox" name="23" value="23" onclick="c23()"><label>ccc</label>
             </div>
           </div>
           <div class="qchoseblock">
-            <div class="qchosebox">
-              <input class="box" type="checkbox" name="24" value="24" onclick="c24()">すええ
+            <div class="qchosebox" id="q24">
+              <input class="box" type="checkbox" name="24" value="24" onclick="c24()"><label>ddd</label>
             </div>
           </div>
         </div>
         <input class="submit" type="button" name="" value="回答" onclick="c2sub()">
         <div class="qanswer q2answer" id="q2answer">
-          <div class="qanswertitle">
+          <div class="qtf" id="q2tf">
+          </div>
+          <div class="qanswertitle" id="q2at">
             答え : <span class="qanswertitlein">aiu</span>
           </div>
           <div class="qanswerdesc">
@@ -95,6 +102,7 @@
           <input class="next" type="button" name="" value="次へ" onclick="q2next()">
         </div>
       </div>
+
       <!-- Q3 -->
       <div class="qblock q3block" id="q3block">
         <div class="qtitle">
@@ -105,29 +113,31 @@
         </div>
         <div class="qchose">
           <div class="qchoseblock">
-            <div class="qchosebox">
-              <input class="box" type="checkbox" name="31" value="31" onclick="c31()">あいうえお
+            <div class="qchosebox" id="q31">
+              <input class="box" type="checkbox" name="31" value="31" onclick="c31()"><label>aaa</label>
             </div>
           </div>
           <div class="qchoseblock">
-            <div class="qchosebox">
-              <input class="box" type="checkbox" name="32" value="32" onclick="c32()">かい
+            <div class="qchosebox" id="q32">
+              <input class="box" type="checkbox" name="32" value="32" onclick="c32()"><label>bbb</label>
             </div>
           </div>
           <div class="qchoseblock">
-            <div class="qchosebox">
-              <input class="box" type="checkbox" name="33" value="33" onclick="c33()">さし
+            <div class="qchosebox" id="q33">
+              <input class="box" type="checkbox" name="33" value="33" onclick="c33()"><label>ccc</label>
             </div>
           </div>
           <div class="qchoseblock">
-            <div class="qchosebox">
-              <input class="box" type="checkbox" name="34" value="34" onclick="c34()">すええ
+            <div class="qchosebox" id="q34">
+              <input class="box" type="checkbox" name="34" value="34" onclick="c34()"><label>ddd</label>
             </div>
           </div>
         </div>
         <input class="submit" type="button" name="" value="回答" onclick="c3sub()">
         <div class="qanswer q3answer" id="q3answer">
-          <div class="qanswertitle">
+          <div class="qtf" id="q3tf">
+          </div>
+          <div class="qanswertitle" id="q3at">
             答え : <span class="qanswertitlein">aiu</span>
           </div>
           <div class="qanswerdesc">
@@ -202,8 +212,34 @@
     }
   }
   function q1check(){
-    if (q1 == 1){
+    console.log("q1 = " + q1);
+    console.log("q11 = " + q11);
+    console.log("q12 = " + q12);
+    console.log("q13 = " + q13);
+    console.log("q14 = " + q14);
+    if (q12 == 0){
+      document.getElementById("q12").innerHTML = '<div class="qchosebox" id="q12"><input class="box" type="checkbox" name="12" value="12" onclick="c12()"><del><label>bbb</label></del></div>';
     }else{
+      document.getElementById("q12").innerHTML = '<div class="qchosebox" id="q12"><input class="box" type="checkbox" name="12" value="12" onclick="c12()" checked="checked"><del><label>bbb</label></del></div>';
+    }
+    if (q13 == 0){
+      document.getElementById("q13").innerHTML = '<div class="qchosebox" id="q13"><input class="box" type="checkbox" name="13" value="13" onclick="c13()"><del><label>ccc</label></del></div>';
+    }else{
+      document.getElementById("q13").innerHTML = '<div class="qchosebox" id="q13"><input class="box" type="checkbox" name="13" value="13" onclick="c13()" checked="checked"><del><label>ccc</label></del></div>';
+    }
+    if (q14 == 0){
+      document.getElementById("q14").innerHTML = '<div class="qchosebox" id="q14"><input class="box" type="checkbox" name="14" value="14" onclick="c14()"><del><label>ddd</label></del></div>';
+    }else{
+      document.getElementById("q14").innerHTML = '<div class="qchosebox" id="q14"><input class="box" type="checkbox" name="14" value="14" onclick="c14()" checked="checked"><del><label>ddd</label></del></div>';
+    }
+    if (q1 == 1){
+      document.getElementById("q1tf").innerHTML = '<div class="qtf qtft" id="q1tf">正解!</div>'
+      document.getElementById("q1at").style.color = "blue";
+      document.getElementById("q1answer").style.background = "#00ffff40";
+    }else{
+      document.getElementById("q1tf").innerHTML = '<div class="qtf qtff" id="q1tf">不正解!</div>'
+      document.getElementById("q1at").style.color = "red";
+      document.getElementById("q1answer").style.background = "#ff00005c";
     }
   }
   function q1next(){
@@ -269,8 +305,34 @@
     }
   }
   function q2check(){
-    if (q2 == 1){
+    console.log("q2 = " + q2);
+    console.log("q21 = " + q21);
+    console.log("q22 = " + q22);
+    console.log("q23 = " + q23);
+    console.log("q24 = " + q24);
+    if (q22 == 0){
+      document.getElementById("q22").innerHTML = '<div class="qchosebox" id="q22"><input class="box" type="checkbox" name="22" value="22" onclick="c22()"><del><label>bbb</label></del></div>';
     }else{
+      document.getElementById("q22").innerHTML = '<div class="qchosebox" id="q22"><input class="box" type="checkbox" name="22" value="22" onclick="c22()" checked="checked"><del><label>bbb</label></del></div>';
+    }
+    if (q23 == 0){
+      document.getElementById("q23").innerHTML = '<div class="qchosebox" id="q23"><input class="box" type="checkbox" name="23" value="23" onclick="c23()"><del><label>ccc</label></del></div>';
+    }else{
+      document.getElementById("q23").innerHTML = '<div class="qchosebox" id="q23"><input class="box" type="checkbox" name="23" value="23" onclick="c23()" checked="checked"><del><label>ccc</label></del></div>';
+    }
+    if (q24 == 0){
+      document.getElementById("q24").innerHTML = '<div class="qchosebox" id="q24"><input class="box" type="checkbox" name="24" value="24" onclick="c24()"><del><label>ddd</label></del></div>';
+    }else{
+      document.getElementById("q24").innerHTML = '<div class="qchosebox" id="q24"><input class="box" type="checkbox" name="24" value="24" onclick="c24()" checked="checked"><del><label>ddd</label></del></div>';
+    }
+    if (q2 == 1){
+      document.getElementById("q2tf").innerHTML = '<div class="qtf qtft" id="q2tf">正解!</div>'
+      document.getElementById("q2at").style.color = "blue";
+      document.getElementById("q2answer").style.background = "#00ffff40";
+    }else{
+      document.getElementById("q2tf").innerHTML = '<div class="qtf qtff" id="q2tf">不正解!</div>'
+      document.getElementById("q2at").style.color = "red";
+      document.getElementById("q2answer").style.background = "#ff00005c";
     }
   }
   function q2next(){
@@ -330,15 +392,40 @@
         q3 = 2;
       }
       q3sub = 1;
-      console.log("test");
       q3check();
       document.getElementById("q3answer").style.display = "block";
     }else{
     }
   }
   function q3check(){
-    if (q2 == 1){
+    console.log("q3 = " + q3);
+    console.log("q31 = " + q31);
+    console.log("q32 = " + q32);
+    console.log("q33 = " + q33);
+    console.log("q34 = " + q34);
+    if (q32 == 0){
+      document.getElementById("q32").innerHTML = '<div class="qchosebox" id="q32"><input class="box" type="checkbox" name="32" value="32" onclick="c32()"><del><label>bbb</label></del></div>';
     }else{
+      document.getElementById("q32").innerHTML = '<div class="qchosebox" id="q32"><input class="box" type="checkbox" name="32" value="32" onclick="c32()" checked="checked"><del><label>bbb</label></del></div>';
+    }
+    if (q33 == 0){
+      document.getElementById("q33").innerHTML = '<div class="qchosebox" id="q33"><input class="box" type="checkbox" name="33" value="33" onclick="c33()"><del><label>ccc</label></del></div>';
+    }else{
+      document.getElementById("q33").innerHTML = '<div class="qchosebox" id="q33"><input class="box" type="checkbox" name="33" value="33" onclick="c33()" checked="checked"><del><label>ccc</label></del></div>';
+    }
+    if (q34 == 0){
+      document.getElementById("q34").innerHTML = '<div class="qchosebox" id="q34"><input class="box" type="checkbox" name="34" value="34" onclick="c34()"><del><label>ddd</label></del></div>';
+    }else{
+      document.getElementById("q34").innerHTML = '<div class="qchosebox" id="q34"><input class="box" type="checkbox" name="34" value="34" onclick="c34()" checked="checked"><del><label>ddd</label></del></div>';
+    }
+    if (q3 == 1){
+      document.getElementById("q3tf").innerHTML = '<div class="qtf qtft" id="q3tf">正解!</div>'
+      document.getElementById("q3at").style.color = "blue";
+      document.getElementById("q3answer").style.background = "#00ffff40";
+    }else{
+      document.getElementById("q3tf").innerHTML = '<div class="qtf qtff" id="q3tf">不正解!</div>'
+      document.getElementById("q3at").style.color = "red";
+      document.getElementById("q3answer").style.background = "#ff00005c";
     }
   }
   function q3next(){
