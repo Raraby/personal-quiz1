@@ -3,6 +3,8 @@ body{
   padding: 0;
   background-color: #80808030;
 }
+
+/* header */
 .header-title{
   padding-top: 0.5em;
   background-color: ;
@@ -10,6 +12,13 @@ body{
   border-bottom: thin medium black;
   font-family: "montserrat",sans-serif;
 }
+.memo{
+  padding-left: 1em;
+}
+
+
+
+/* main */
 .qblock{
   margin: 1em 2em;
   padding: 1em;
@@ -92,3 +101,7 @@ body{
 .q3answer{
   display: none;
 }
+
+
+
+/* footer */
