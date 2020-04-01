@@ -3,6 +3,13 @@ body{
   padding: 0;
   background-color: #80808030;
 }
+.header-title{
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: ;
+  font-size: 4em;
+  border-bottom: thin medium black;
+}
 .qblock{
   margin: 1em 2em;
   padding: 1em;
