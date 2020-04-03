@@ -82,6 +82,9 @@ body{
   margin: 1em 0.3em;
   font-size: 1.5em;
 }
+.pic{
+  width : 18em;
+}
 
 .q2block,.q3block,.q4block,.q5block,.q6block,.q7block,.q8block,.q9block,.q10block,.result,.log{
   display: none;
@@ -120,7 +123,23 @@ body{
   font-size: 2.5em;
 }
 .login{
+  font-size: 1.5em;
+}
+.htmlcss{
+  margin: 10em 4em 1em 4em;
+  padding: 3em;
+  border: medium solid black;
+  box-sizing: border-box;
+  display: none;
+  font-size : 2em;
+}
 
+
+.footer{
+  background-color: gray;
+  padding: 2em;
+  font-size: 2em;
+  font-weight: bold;
 }
 
 /* footer */
