@@ -1317,7 +1317,7 @@
             一番はらっだぁ<br>
             もちろんサブスクしてる ・らく <br>
           </div>
-          <input class="next" type="button" name="" value="結果へ" onclick="q10next()">
+          <input class="next" type="button" name="result" value="結果へ" onclick="q10next()">
         </div>
       </div>
       <script type="text/javascript">
@@ -1354,9 +1354,13 @@
         function c10sub(){
           if (q10 == 0){
             if (q101 == 0){
+              console.log("test1");
               if (q102 == 1){
+                console.log("test2");
                 if (q103 == 1){
+                  console.log("test3");
                   if (q104 == 1){
+                    console.log("test4");
                     q10 = 1;
                   }else{
                     q10 = 2;
@@ -1531,6 +1535,126 @@
         <h1>制作：むらぴよ</h1>
         <h1>総行数 : 1658行</h1>
         <h1>制作時間 : 7～8時間</h1>
+        <input class="next" type="button" name="log" value="ログを表示" onclick="log()">
+        <script type="text/javascript">
+        function log(){
+          document.getElementById("log").style.display = "block";
+          if (q1 == 1){
+            document.getElementById("q1log").innerHTML = "Q1 = true"
+          }else{
+            document.getElementById("q1log").innerHTML = "Q1 = false"
+          }
+          if (q2 == 1){
+            document.getElementById("q2log").innerHTML = "Q2 = true"
+          }else{
+            document.getElementById("q2log").innerHTML = "Q2 = false"
+          }
+          if (q3 == 1){
+            document.getElementById("q3log").innerHTML = "Q3 = true"
+          }else{
+            document.getElementById("q3log").innerHTML = "Q3 = false"
+          }
+          if (q4 == 1){
+            document.getElementById("q4log").innerHTML = "Q4 = true"
+          }else{
+            document.getElementById("q4log").innerHTML = "Q4 = false"
+          }
+          if (q5 == 1){
+            document.getElementById("q5log").innerHTML = "Q5 = true"
+          }else{
+            document.getElementById("q5log").innerHTML = "Q5 = false"
+          }
+          if (q6 == 1){
+            document.getElementById("q6log").innerHTML = "Q6 = true"
+          }else{
+            document.getElementById("q6log").innerHTML = "Q6 = false"
+          }
+          if (q7 == 1){
+            document.getElementById("q7log").innerHTML = "Q7 = true"
+          }else{
+            document.getElementById("q7log").innerHTML = "Q7 = false"
+          }
+          if (q8 == 1){
+            document.getElementById("q8log").innerHTML = "Q8 = true"
+          }else{
+            document.getElementById("q8log").innerHTML = "Q8 = false"
+          }
+          if (q9 == 1){
+            document.getElementById("q9log").innerHTML = "Q9 = true"
+          }else{
+            document.getElementById("q9log").innerHTML = "Q9 = false"
+          }
+          if (q91 == 0){
+            document.getElementById("q9log1").innerHTML = "Q9-1 = empty"
+          }else{
+            document.getElementById("q9log1").innerHTML = "Q9-1 = checked"
+          }
+          if (q92 == 0){
+            document.getElementById("q9log2").innerHTML = "Q9-2 = empty"
+          }else{
+            document.getElementById("q9log2").innerHTML = "Q9-2 = checked"
+          }
+          if (q93 == 0){
+            document.getElementById("q9log3").innerHTML = "Q9-3 = empty"
+          }else{
+            document.getElementById("q9log3").innerHTML = "Q9-3 = checked"
+          }
+          if (q94 == 0){
+            document.getElementById("q9log4").innerHTML = "Q9-4 = empty"
+          }else{
+            document.getElementById("q9log4").innerHTML = "Q9-4 = checked"
+          }
+          if (q10 == 1){
+            document.getElementById("q10log").innerHTML = "Q10 = true"
+          }else{
+            document.getElementById("q10log").innerHTML = "Q10 = false"
+          }
+          if (q101 == 0){
+            document.getElementById("q10log1").innerHTML = "Q10-1 = empty"
+          }else{
+            document.getElementById("q10log1").innerHTML = "Q10-1 = checked"
+          }
+          if (q102 == 0){
+            document.getElementById("q10log2").innerHTML = "Q10-2 = empty"
+          }else{
+            document.getElementById("q10log2").innerHTML = "Q10-2 = checked"
+          }
+          if (q103 == 0){
+            document.getElementById("q10log3").innerHTML = "Q10-3 = empty"
+          }else{
+            document.getElementById("q10log3").innerHTML = "Q10-3 = checked"
+          }
+          if (q104 == 0){
+            document.getElementById("q10log4").innerHTML = "Q10-4 = empty"
+          }else{
+            document.getElementById("q10log4").innerHTML = "Q10-4 = checked"
+          }
+        }
+        </script>
+      </div>
+
+      <div class="log" id="log">
+        <div class="logtitle">
+          ログ
+        </div>
+        <div class="login" id="q1log"></div>
+        <div class="login" id="q2log"></div>
+        <div class="login" id="q3log"></div>
+        <div class="login" id="q4log"></div>
+        <div class="login" id="q5log"></div>
+        <div class="login" id="q6log"></div>
+        <div class="login" id="q7log"></div>
+        <div class="login" id="q8log"></div>
+        <div class="login" id="q9log"></div>
+        <div class="login" id="q9log1"></div>
+        <div class="login" id="q9log2"></div>
+        <div class="login" id="q9log3"></div>
+        <div class="login" id="q9log4"></div>
+        <div class="login" id="q10log"></div>
+        <div class="login" id="q10log1"></div>
+        <div class="login" id="q10log2"></div>
+        <div class="login" id="q10log3"></div>
+        <div class="login" id="q10log4"></div>
       </div>
 
 
