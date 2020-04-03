@@ -1,138 +1,1688 @@
-body{
-  margin: 0;
-  padding: 0;
-  background-color: #8080803d;
-}
-
-/* header */
-.header-title{
-  padding-top: 0.5em;
-  background-color: ;
-  font-size: 4em;
-  border-bottom: thin medium black;
-  font-family: "montserrat",sans-serif;
-}
-.memo{
-  padding-left: 1em;
-}
-
-
-
-/* main */
-.qblock{
-  margin: 1em 2em;
-  padding: 1em;
-  border: thin solid black;
-  box-sizing: border-box;
-}
-.qtitle{
-  float: left;
-  font-size: 1.5em;
-  font-weight: bold;
-}
-.qquestion{
-  padding-top: 0.5em;
-  margin-left: 2em;
-  font-size: 3em;
-  font-weight: ;
-  border-bottom: thin solid black;
-}
-.qchose{
-  margin: 1em 8em;
-}
-.qchoseblock{
-  padding-top: 0.3em;
-  font-size: 2em;
-}
-.box{
-  font-size: 2em;
-}
-.submit{
-  margin-left: 7em;
-  font-size: 1.5em;
-}
-.qanswer{
-  margin: 2em 5em;
-  padding-top: 1em;
-  padding-left: 2em;
-  border-top: thin solid black;
-}
-.qtf{
-  margin-left: 0.3em;
-  font-size: 1.8em;
-}
-.qtff{
-  color: red;
-}
-.qtft{
-  color: blue;
-}
-.qanswertitle{
-  margin-left: 1em;
-  font-size: 1.5em;
-}
-.qanswertitlein{
-  font-size: 1.5em;
-}
-.qanswerdesc{
-  margin-left: 2em;
-  font-size: 1.8em;
-}
-.next{
-  margin: 1em 0.3em;
-  font-size: 1.5em;
-}
-.pic{
-  width : 18em;
-}
-
-.q2block,.q3block,.q4block,.q5block,.q6block,.q7block,.q8block,.q9block,.q10block,.result,.log{
-  display: none;
-}
-.qanswer{
-  display: none;
-}
-
-.result{
-  margin: 10em 4em 1em 4em;
-  padding: 3em;
-  border: medium solid black;
-  box-sizing: border-box;
-}
-.resulttitle{
-  font-size: 2.5em;
-}
-.resultin{
-  padding-top: 1em;
-  padding-left: 1em;
-  font-size: 3em;
-}
-.comment{
-  padding-top: 2em;
-  padding-left: 1em;
-  padding-bottom: 2em;
-  font-size: 2em;
-}
-.log{
-  margin: 10em 4em 1em 4em;
-  padding: 3em;
-  border: medium solid black;
-  box-sizing: border-box;
-}
-.logtitle{
-  font-size: 2.5em;
-}
-.login{
-  font-size: 1.5em;
-}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="quiz.css">
+    <title>ぴよっ</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157344251-9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-157344251-9']);
+        _gaq.push(['_setCustomVar', 1 , 'IPアドレス' , '<?php echo $_SERVER['REMOTE_ADDR']; ?>' , 1]);
+        _gaq.push(['_trackPageview']);
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      gtag('config', 'UA-157344251-9');
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="header-title" align="center">
+        ぴよっ
+      </div>
+      <div class="memo" style="font-size: 2.3em">
+        メモ<br>
+        正しいやつだけ<span style="color : red;font-weight : bold;">全部</span>選びな！<br>
+      </div>
+    </header>
 
 
 
-.footer{
-  background-color: gray;
-  padding: 2em;
-  font-size: 2em;
-  font-weight: bold;
-}
+    <main>
+      <!-- Q1 -->
+      <div class="qblock q1block" id="q1block">
+        <div class="qtitle">
+          Q.1
+        </div>
+        <div class="qquestion">
+          誕生日は？
+        </div>
+        <div class="qchose">
+          <div class="qchoseblock">
+            <div class="qchosebox"  id="q11">
+              <input class="box" type="checkbox" name="11" value="11" onclick="c11()"><label>7月</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q12">
+              <input class="box" type="checkbox" name="12" value="12" onclick="c12()"><label>8月</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q13">
+              <input class="box" type="checkbox" name="13" value="13" onclick="c13()"><label>9月</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q14">
+              <input class="box" type="checkbox" name="14" value="14" onclick="c14()"><label>10月</label>
+            </div>
+          </div>
+        </div>
+        <input class="submit" type="button" name="" value="回答" onclick="c1sub()">
+        <div class="qanswer q1answer" id="q1answer">
+          <div class="qtf" id="q1tf">
+          </div>
+          <div class="qanswertitle" id="q1at">
+            答え : <span class="qanswertitlein">9月</span>
+          </div>
+          <div class="qanswerdesc">
+            需要無。<br>
+          </div>
+          <input class="next" type="button" name="" value="次へ" onclick="q1next()">
+        </div>
+      </div>
+      <script type="text/javascript">
+        // Q1
+        var q1 = 0, q11 = 0, q12 = 0, q13 = 0, q14 = 0;
+        function c11(){
+          if (q11 == 0){
+            q11 = 1;
+          }else{
+            q11 = 0;
+          }
+        }
+        function c12(){
+          if (q12 == 0){
+            q12 = 1;
+          }else{
+            q12 = 0;
+          }
+        }
+        function c13(){
+          if (q13 == 0){
+            q13 = 1;
+          }else{
+            q13 = 0;
+          }
+        }
+        function c14(){
+          if (q14 == 0){
+            q14 = 1;
+          }else{
+            q14 = 0;
+          }
+        }
+        function c1sub(){
+          if (q1 == 0){
+            if (q11 == 0){
+              if (q12 == 0){
+                if (q13 == 1){
+                  if (q14 == 0){
+                    q1 = 1;
+                  }else{
+                    q1 = 2;
+                  }
+                }else{
+                  q1 = 2;
+                }
+              }else{
+                q1 = 2;
+              }
+            }else{
+              q1 = 2;
+            }
+            q1check();
+            document.getElementById("q1answer").style.display = "block";
+          }else{
+          }
+        }
+        function q1check(){
+          console.log("q1 = " + q1);
+          console.log("q11 = " + q11);
+          console.log("q12 = " + q12);
+          console.log("q13 = " + q13);
+          console.log("q14 = " + q14);
+          if (q11 == 0){
+            document.getElementById("q11").innerHTML = '<div class="qchosebox" id="q11"><input class="box" type="checkbox" name="11" value="11" onclick="c11()"><del><label>7月</label></del></div>';
+          }else{
+            document.getElementById("q11").innerHTML = '<div class="qchosebox" id="q11"><input class="box" type="checkbox" name="11" value="11" onclick="c11()" checked="checked"><del><label>7月</label></del></div>';
+          }
+          if (q12 == 0){
+            document.getElementById("q12").innerHTML = '<div class="qchosebox" id="q12"><input class="box" type="checkbox" name="12" value="12" onclick="c12()"><del><label>8月</label></del></div>';
+          }else{
+            document.getElementById("q12").innerHTML = '<div class="qchosebox" id="q12"><input class="box" type="checkbox" name="12" value="12" onclick="c12()" checked="checked"><del><label>8月</label></del></div>';
+          }
+          if (q13 == 0){
+            console.log("ys1");
+            document.getElementById("q13").innerHTML = '<div class="qchosebox" id="q13"><input class="box" type="checkbox" name="13" value="13" onclick="c13()"><label style="color : blue;">9月</label></div>';
+          }else{
+            console.log("snjs");
+            document.getElementById("q13").innerHTML = '<div class="qchosebox" id="q13"><input class="box" type="checkbox" name="13" value="13" onclick="c13()" checked="checked"><label style="color : blue;">9月</label></div>';
+          }
+          if (q14 == 0){
+            document.getElementById("q14").innerHTML = '<div class="qchosebox" id="q14"><input class="box" type="checkbox" name="14" value="14" onclick="c14()"><del><label>10月</label></del></div>';
+          }else{
+            document.getElementById("q14").innerHTML = '<div class="qchosebox" id="q14"><input class="box" type="checkbox" name="14" value="14" onclick="c14()" checked="checked"><del><label>10月</label></del></div>';
+          }
+          if (q1 == 1){
+            document.getElementById("q1tf").innerHTML = '<div class="qtf qtft" id="q1tf">正解!</div>'
+            document.getElementById("q1at").style.color = "blue";
+            document.getElementById("q1answer").style.background = "#00ffff40";
+            console.log("Q1 : True");
+          }else{
+            document.getElementById("q1tf").innerHTML = '<div class="qtf qtff" id="q1tf">不正解!</div>'
+            document.getElementById("q1at").style.color = "red";
+            document.getElementById("q1answer").style.background = "#ff00005c";
+            console.log("Q1 : False");
+          }
+        }
+        function q1next(){
+          document.getElementById("q2block").style.display = "block";
+        }
+      </script>
 
-/* footer */
+      <!-- Q2 -->
+      <div class="qblock q2block" id="q2block">
+        <div class="qtitle">
+          Q.2
+        </div>
+        <div class="qquestion">
+          中学の部活
+        </div>
+        <div class="qchose">
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q21">
+              <input class="box" type="checkbox" name="21" value="21" onclick="c21()"><label>ソフトテニス部</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q22">
+              <input class="box" type="checkbox" name="22" value="22" onclick="c22()"><label>バスケ部</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q23">
+              <input class="box" type="checkbox" name="23" value="23" onclick="c23()"><label>水泳部</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q24">
+              <input class="box" type="checkbox" name="24" value="24" onclick="c24()"><label>帰宅部</label>
+            </div>
+          </div>
+        </div>
+        <input class="submit" type="button" name="" value="回答" onclick="c2sub()">
+        <div class="qanswer q2answer" id="q2answer">
+          <div class="qtf" id="q2tf">
+          </div>
+          <div class="qanswertitle" id="q2at">
+            答え : <span class="qanswertitlein">水泳部</span>
+          </div>
+          <div class="qanswerdesc">
+            溺れてた
+          </div>
+          <input class="next" type="button" name="" value="次へ" onclick="q2next()">
+        </div>
+      </div>
+      <script type="text/javascript">
+        // Q2
+        var q2 = 0, q21 = 0, q22 = 0, q23 = 0, q24 = 0;
+        function c21(){
+          if (q21 == 0){
+            q21 = 1;
+          }else{
+            q21 = 0;
+          }
+        }
+        function c22(){
+          if (q22 == 0){
+            q22 = 1;
+          }else{
+            q22 = 0;
+          }
+        }
+        function c23(){
+          if (q23 == 0){
+            q23 = 1;
+          }else{
+            q23 = 0;
+          }
+        }
+        function c24(){
+          if (q24 == 0){
+            q24 = 1;
+          }else{
+            q24 = 0;
+          }
+        }
+        function c2sub(){
+          if (q2 == 0){
+            if (q21 == 0){
+              if (q22 == 0){
+                if (q23 == 1){
+                  if (q24 == 0){
+                    q2 = 1;
+                  }else{
+                    q2 = 2;
+                  }
+                }else{
+                  q2 = 2;
+                }
+              }else{
+                q2 = 2;
+              }
+            }else{
+              q2 = 2;
+            }
+            q2check();
+            document.getElementById("q2answer").style.display = "block";
+          }else{
+          }
+        }
+        function q2check(){
+          console.log("q2 = " + q2);
+          console.log("q21 = " + q21);
+          console.log("q22 = " + q22);
+          console.log("q23 = " + q23);
+          console.log("q24 = " + q24);
+          if (q21 == 0){
+            document.getElementById("q21").innerHTML = '<div class="qchosebox" id="q21"><input class="box" type="checkbox" name="21" value="21" onclick="c21()"><del><label>ソフトテニス部</label></del></div>';
+          }else{
+            document.getElementById("q21").innerHTML = '<div class="qchosebox" id="q21"><input class="box" type="checkbox" name="21" value="21" onclick="c21()" checked="checked"><del><label>ソフトテニス部</label></del></div>';
+          }
+          if (q22 == 0){
+            document.getElementById("q22").innerHTML = '<div class="qchosebox" id="q22"><input class="box" type="checkbox" name="22" value="22" onclick="c22()"><del><label>バスケ部</label></del></div>';
+          }else{
+            document.getElementById("q22").innerHTML = '<div class="qchosebox" id="q22"><input class="box" type="checkbox" name="22" value="22" onclick="c22()" checked="checked"><del><label>バスケ部</label></del></div>';
+          }
+          if (q23 == 0){
+            document.getElementById("q23").innerHTML = '<div class="qchosebox" id="q23"><input class="box" type="checkbox" name="23" value="23" onclick="c23()"><label style="color : blue;">水泳部</label></div>';
+          }else{
+            document.getElementById("q23").innerHTML = '<div class="qchosebox" id="q23"><input class="box" type="checkbox" name="23" value="23 onclick="c23()" checked="checked"><label style="color : blue;">水泳部</label></div>';
+          }
+          if (q24 == 0){
+            document.getElementById("q24").innerHTML = '<div class="qchosebox" id="q24"><input class="box" type="checkbox" name="24" value="24" onclick="c24()"><del><label>帰宅部</label></del></div>';
+          }else{
+            document.getElementById("q24").innerHTML = '<div class="qchosebox" id="q24"><input class="box" type="checkbox" name="24" value="24" onclick="c24()" checked="checked"><del><label>帰宅部</label></del></div>';
+          }
+          if (q2 == 1){
+            document.getElementById("q2tf").innerHTML = '<div class="qtf qtft" id="q2tf">正解!</div>'
+            document.getElementById("q2at").style.color = "blue";
+            document.getElementById("q2answer").style.background = "#00ffff40";
+            console.log("Q2 : True");
+          }else{
+            document.getElementById("q2tf").innerHTML = '<div class="qtf qtff" id="q2tf">不正解!</div>'
+            document.getElementById("q2at").style.color = "red";
+            document.getElementById("q2answer").style.background = "#ff00005c";
+            console.log("Q2 : False");
+          }
+        }
+        function q2next(){
+          document.getElementById("q3block").style.display = "block";
+        }
+      </script>
+
+      <!-- Q3 -->
+      <div class="qblock q3block" id="q3block">
+        <div class="qtitle">
+          Q.3
+        </div>
+        <div class="qquestion">
+          暇つぶしになにしてる？
+        </div>
+        <div class="qchose">
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q31">
+              <input class="box" type="checkbox" name="31" value="31" onclick="c31()"><label>寝る</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q32">
+              <input class="box" type="checkbox" name="32" value="32" onclick="c32()"><label>勉強</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q33">
+              <input class="box" type="checkbox" name="33" value="33" onclick="c33()"><label>運動</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q34">
+              <input class="box" type="checkbox" name="34" value="34" onclick="c34()"><label>プログラミング</label>
+            </div>
+          </div>
+        </div>
+        <input class="submit" type="button" name="" value="回答" onclick="c3sub()">
+        <div class="qanswer q3answer" id="q3answer">
+          <div class="qtf" id="q3tf">
+          </div>
+          <div class="qanswertitle" id="q3at">
+            答え : <span class="qanswertitlein">プログラミング</span>
+          </div>
+          <div class="qanswerdesc">
+            圧倒的睡眠不足<br>
+            圧倒的勉強不足<br>
+            圧倒的運動不足<br>
+          </div>
+          <input class="next" type="button" name="" value="次へ" onclick="q3next()">
+        </div>
+      </div>
+      <script type="text/javascript">
+        // Q3
+        var q3 = 0, q31 = 0, q32 = 0, q33 = 0, q34 = 0;
+        function c31(){
+          if (q31 == 0){
+            q31 = 1;
+          }else{
+            q31 = 0;
+          }
+        }
+        function c32(){
+          if (q32 == 0){
+            q32 = 1;
+          }else{
+            q32 = 0;
+          }
+        }
+        function c33(){
+          if (q33 == 0){
+            q33 = 1;
+          }else{
+            q33 = 0;
+          }
+        }
+        function c34(){
+          if (q34 == 0){
+            q34 = 1;
+          }else{
+            q34 = 0;
+          }
+        }
+        function c3sub(){
+          if (q3 == 0){
+            if (q31 == 0){
+              if (q32 == 0){
+                if (q33 == 0){
+                  if (q34 == 1){
+                    q3 = 1;
+                  }else{
+                    q3 = 2;
+                  }
+                }else{
+                  q3 = 2;
+                }
+              }else{
+                q3 = 2;
+              }
+            }else{
+              q3 = 2;
+            }
+            q3check();
+            document.getElementById("q3answer").style.display = "block";
+          }else{
+          }
+        }
+        function q3check(){
+          console.log("q3 = " + q3);
+          console.log("q31 = " + q31);
+          console.log("q32 = " + q32);
+          console.log("q33 = " + q33);
+          console.log("q34 = " + q34);
+          if (q31 == 0){
+            document.getElementById("q31").innerHTML = '<div class="qchosebox" id="q31"><input class="box" type="checkbox" name="31" value="31" onclick="c31()"><del><label>寝る</label></del></div>';
+          }else{
+            document.getElementById("q31").innerHTML = '<div class="qchosebox" id="q31"><input class="box" type="checkbox" name="31" value="31" onclick="c31()" checked="checked"><del><label>寝る</label></del></div>';
+          }
+          if (q32 == 0){
+            document.getElementById("q32").innerHTML = '<div class="qchosebox" id="q32"><input class="box" type="checkbox" name="32" value="32" onclick="c32()"><del><label>勉強</label></del></div>';
+          }else{
+            document.getElementById("q32").innerHTML = '<div class="qchosebox" id="q32"><input class="box" type="checkbox" name="32" value="32" onclick="c32()" checked="checked"><del><label>勉強</label></del></div>';
+          }
+          if (q33 == 0){
+            document.getElementById("q33").innerHTML = '<div class="qchosebox" id="q33"><input class="box" type="checkbox" name="33" value="33" onclick="c33()"><del><label>運動</label></del></div>';
+          }else{
+            document.getElementById("q33").innerHTML = '<div class="qchosebox" id="q33"><input class="box" type="checkbox" name="33" value="33" onclick="c33()" checked="checked"><del><label>運動</label></del></div>';
+          }
+          if (q34 == 0){
+            document.getElementById("q34").innerHTML = '<div class="qchosebox" id="q34"><input class="box" type="checkbox" name="34" value="34" onclick="c34()"><label style="color : blue;">プログラミング</label></div>';
+          }else{
+            document.getElementById("q34").innerHTML = '<div class="qchosebox" id="q34"><input class="box" type="checkbox" name="34" value="34" onclick="c34()" checked="checked"><label style="color : blue;">プログラミング</label></div>';
+          }
+          if (q3 == 1){
+            document.getElementById("q3tf").innerHTML = '<div class="qtf qtft" id="q3tf">正解!</div>'
+            document.getElementById("q3at").style.color = "blue";
+            document.getElementById("q3answer").style.background = "#00ffff40";
+            console.log("Q3 : True");
+          }else{
+            document.getElementById("q3tf").innerHTML = '<div class="qtf qtff" id="q3tf">不正解!</div>'
+            document.getElementById("q3at").style.color = "red";
+            document.getElementById("q3answer").style.background = "#ff00005c";
+            console.log("Q3 : False");
+          }
+        }
+        function q3next(){
+          document.getElementById("q4block").style.display = "block";
+        }
+      </script>
+
+      <!-- Q4 -->
+      <div class="qblock q4block" id="q4block">
+        <div class="qtitle">
+          Q.4
+        </div>
+        <div class="qquestion">
+          はまったスマホゲーム
+        </div>
+        <div class="qchose">
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q41">
+              <input class="box" type="checkbox" name="41" value="41" onclick="c41()"><label>ツムツム</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q42">
+              <input class="box" type="checkbox" name="42" value="42" onclick="c42()"><label>荒野</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q43">
+              <input class="box" type="checkbox" name="43" value="43" onclick="c43()"><label>ポケモンGO</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q44">
+              <input class="box" type="checkbox" name="44" value="44" onclick="c44()"><label>モンスト</label>
+            </div>
+          </div>
+        </div>
+        <input class="submit" type="button" name="" value="回答" onclick="c4sub()">
+        <div class="qanswer q4answer" id="q4answer">
+          <div class="qtf" id="q4tf">
+          </div>
+          <div class="qanswertitle" id="q4at">
+            答え : <span class="qanswertitlein">ツムツム</span>
+          </div>
+          <div class="qanswerdesc">
+            半引退<br>
+            ジャファーで週間スコアだけ出してる<br>
+            合計プレイ時間 : 150時間3分<br>
+          </div>
+          <input class="next" type="button" name="" value="次へ" onclick="q4next()">
+        </div>
+      </div>
+      <script type="text/javascript">
+        // Q4
+        var q4 = 0, q41 = 0, q42 = 0, q43 = 0, q44 = 0;
+        function c41(){
+          if (q41 == 0){
+            q41 = 1;
+          }else{
+            q41 = 0;
+          }
+        }
+        function c42(){
+          if (q42 == 0){
+            q42 = 1;
+          }else{
+            q42 = 0;
+          }
+        }
+        function c43(){
+          if (q43 == 0){
+            q43 = 1;
+          }else{
+            q43 = 0;
+          }
+        }
+        function c44(){
+          if (q44 == 0){
+            q44 = 1;
+          }else{
+            q44 = 0;
+          }
+        }
+        function c4sub(){
+          if (q4 == 0){
+            if (q41 == 1){
+              if (q42 == 0){
+                if (q43 == 0){
+                  if (q44 == 0){
+                    q4 = 1;
+                  }else{
+                    q4 = 2;
+                  }
+                }else{
+                  q4 = 2;
+                }
+              }else{
+                q4 = 2;
+              }
+            }else{
+              q4 = 2;
+            }
+            q4check();
+            document.getElementById("q4answer").style.display = "block";
+          }else{
+          }
+        }
+        function q4check(){
+          console.log("q4 = " + q4);
+          console.log("q41 = " + q41);
+          console.log("q42 = " + q42);
+          console.log("q43 = " + q43);
+          console.log("q44 = " + q44);
+          if (q41 == 0){
+            document.getElementById("q41").innerHTML = '<div class="qchosebox" id="q41"><input class="box" type="checkbox" name="41" value="41" onclick="c41()"><label style="color : blue;">ツムツム</label></div>';
+          }else{
+            document.getElementById("q41").innerHTML = '<div class="qchosebox" id="q41"><input class="box" type="checkbox" name="41" value="41" onclick="c41()" checked="checked"><label style="color : blue;">ツムツム</label></div>';
+          }
+          if (q42 == 0){
+            document.getElementById("q42").innerHTML = '<div class="qchosebox" id="q42"><input class="box" type="checkbox" name="42" value="42" onclick="c42()"><del><label>荒野</label></del></div>';
+          }else{
+            document.getElementById("q42").innerHTML = '<div class="qchosebox" id="q42"><input class="box" type="checkbox" name="42" value="42" onclick="c42()" checked="checked"><del><label>荒野</label></del></div>';
+          }
+          if (q43 == 0){
+            document.getElementById("q43").innerHTML = '<div class="qchosebox" id="q43"><input class="box" type="checkbox" name="43" value="43" onclick="c43()"><del><label>ポケモンGO</label></del></div>';
+          }else{
+            document.getElementById("q43").innerHTML = '<div class="qchosebox" id="q43"><input class="box" type="checkbox" name="43" value="43" onclick="c43()" checked="checked"><del><label>ポケモンGO</label></del></div>';
+          }
+          if (q44 == 0){
+            document.getElementById("q44").innerHTML = '<div class="qchosebox" id="q44"><input class="box" type="checkbox" name="44" value="44" onclick="c44()"><del><label>モンスト</label></del></div>';
+          }else{
+            document.getElementById("q44").innerHTML = '<div class="qchosebox" id="q44"><input class="box" type="checkbox" name="44" value="44" onclick="c44()" checked="checked"><del><label>モンスト</label></del></div>';
+          }
+          if (q4 == 1){
+            document.getElementById("q4tf").innerHTML = '<div class="qtf qtft" id="q4tf">正解!</div>'
+            document.getElementById("q4at").style.color = "blue";
+            document.getElementById("q4answer").style.background = "#00ffff40";
+            console.log("Q4 : True");
+          }else{
+            document.getElementById("q4tf").innerHTML = '<div class="qtf qtff" id="q4tf">不正解!</div>'
+            document.getElementById("q4at").style.color = "red";
+            document.getElementById("q4answer").style.background = "#ff00005c";
+            console.log("Q4 : False");
+          }
+        }
+        function q4next(){
+          document.getElementById("q5block").style.display = "block";
+        }
+      </script>
+
+      <!-- Q5 -->
+      <div class="qblock q5block" id="q5block">
+        <div class="qtitle">
+          Q.5
+        </div>
+        <div class="qquestion">
+          パソコンを始めたのは
+        </div>
+        <div class="qchose">
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q51">
+              <input class="box" type="checkbox" name="51" value="51" onclick="c51()"><label>小1</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q52">
+              <input class="box" type="checkbox" name="52" value="52" onclick="c52()"><label>小3</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q53">
+              <input class="box" type="checkbox" name="53" value="53" onclick="c53()"><label>小5</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q54">
+              <input class="box" type="checkbox" name="54" value="54" onclick="c54()"><label>中1</label>
+            </div>
+          </div>
+        </div>
+        <input class="submit" type="button" name="" value="回答" onclick="c5sub()">
+        <div class="qanswer q5answer" id="q5answer">
+          <div class="qtf" id="q5tf">
+          </div>
+          <div class="qanswertitle" id="q5at">
+            答え : <span class="qanswertitlein">小3</span>
+          </div>
+          <div class="qanswerdesc">
+            その頃からずっとyoutubeみてた<br>
+            プログラミング始めたのは中学から<br>
+          </div>
+          <input class="next" type="button" name="" value="次へ" onclick="q5next()">
+        </div>
+      </div>
+      <script type="text/javascript">
+        // Q5
+        var q5 = 0, q51 = 0, q52 = 0, q53 = 0, q54 = 0;
+        function c51(){
+          if (q51 == 0){
+            q51 = 1;
+          }else{
+            q51 = 0;
+          }
+        }
+        function c52(){
+          if (q52 == 0){
+            q52 = 1;
+          }else{
+            q52 = 0;
+          }
+        }
+        function c53(){
+          if (q53 == 0){
+            q53 = 1;
+          }else{
+            q53 = 0;
+          }
+        }
+        function c54(){
+          if (q54 == 0){
+            q54 = 1;
+          }else{
+            q54 = 0;
+          }
+        }
+        function c5sub(){
+          if (q5 == 0){
+            if (q51 == 0){
+              if (q52 == 1){
+                if (q53 == 0){
+                  if (q54 == 0){
+                    q5 = 1;
+                  }else{
+                    q5 = 2;
+                  }
+                }else{
+                  q5 = 2;
+                }
+              }else{
+                q5= 2;
+              }
+            }else{
+              q5 = 2;
+            }
+            q5check();
+            document.getElementById("q5answer").style.display = "block";
+          }else{
+          }
+        }
+        function q5check(){
+          console.log("q5 = " + q5);
+          console.log("q51 = " + q51);
+          console.log("q52 = " + q52);
+          console.log("q53 = " + q53);
+          console.log("q54 = " + q54);
+          if (q51 == 0){
+            document.getElementById("q51").innerHTML = '<div class="qchosebox" id="q51"><input class="box" type="checkbox" name="51" value="51" onclick="c51()"><del><label>小1</label></del></div>';
+          }else{
+            document.getElementById("q51").innerHTML = '<div class="qchosebox" id="q51"><input class="box" type="checkbox" name="51" value="51" onclick="c51()" checked="checked"><del><label>小1</label></del></div>';
+          }
+          if (q52 == 0){
+            document.getElementById("q52").innerHTML = '<div class="qchosebox" id="q52"><input class="box" type="checkbox" name="52" value="52" onclick="c52()"><label style="color : blue;">小3</label></div>';
+          }else{
+            document.getElementById("q52").innerHTML = '<div class="qchosebox" id="q52"><input class="box" type="checkbox" name="52" value="52" onclick="c52()" checked="checked"><label style="color : blue;">小3</label></div>';
+          }
+          if (q53 == 0){
+            document.getElementById("q53").innerHTML = '<div class="qchosebox" id="q53"><input class="box" type="checkbox" name="53" value="53" onclick="c53()"><del><label>小5</label></del></div>';
+          }else{
+            document.getElementById("q53").innerHTML = '<div class="qchosebox" id="q53"><input class="box" type="checkbox" name="53" value="53" onclick="c53()" checked="checked"><del><label>小5</label></del></div>';
+          }
+          if (q54 == 0){
+            document.getElementById("q54").innerHTML = '<div class="qchosebox" id="q54"><input class="box" type="checkbox" name="54" value="54" onclick="c54()"><del><label>中1</label></del></div>';
+          }else{
+            document.getElementById("q54").innerHTML = '<div class="qchosebox" id="q54"><input class="box" type="checkbox" name="54" value="54" onclick="c54()" checked="checked"><del><label>中1</label></del></div>';
+          }
+          if (q5 == 1){
+            document.getElementById("q5tf").innerHTML = '<div class="qtf qtft" id="q5tf">正解!</div>'
+            document.getElementById("q5at").style.color = "blue";
+            document.getElementById("q5answer").style.background = "#00ffff40";
+            console.log("Q5 : True");
+          }else{
+            document.getElementById("q5tf").innerHTML = '<div class="qtf qtff" id="q5tf">不正解!</div>'
+            document.getElementById("q5at").style.color = "red";
+            document.getElementById("q5answer").style.background = "#ff00005c";
+            console.log("Q5 : False");
+          }
+        }
+        function q5next(){
+          document.getElementById("q6block").style.display = "block";
+        }
+      </script>
+
+      <!-- Q6 -->
+      <div class="qblock q6block" id="q6block">
+        <div class="qtitle">
+          Q.6
+        </div>
+        <div class="qquestion">
+          海外旅行に行くなら？
+        </div>
+        <div class="qchose">
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q61">
+              <input class="box" type="checkbox" name="61" value="61" onclick="c61()"><label>ニューヨーク</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q62">
+              <input class="box" type="checkbox" name="62" value="62" onclick="c62()"><label>ハワイ</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q63">
+              <input class="box" type="checkbox" name="63" value="63" onclick="c63()"><label>ロンドン</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q64">
+              <input class="box" type="checkbox" name="64" value="64" onclick="c64()"><label>オーストラリア</label>
+            </div>
+          </div>
+        </div>
+        <input class="submit" type="button" name="" value="回答" onclick="c6sub()">
+        <div class="qanswer q6answer" id="q6answer">
+          <div class="qtf" id="q6tf">
+          </div>
+          <div class="qanswertitle" id="q6at">
+            答え : <span class="qanswertitlein">ニューヨーク</span>
+          </div>
+          <div class="qanswerdesc">
+            将来一人旅したい<br>
+          </div>
+          <input class="next" type="button" name="" value="次へ" onclick="q6next()">
+        </div>
+      </div>
+      <script type="text/javascript">
+        // Q6
+        var q6 = 0, q61 = 0, q62 = 0, q63 = 0, q64 = 0;
+        function c61(){
+          if (q61 == 0){
+            q61 = 1;
+          }else{
+            q61 = 0;
+          }
+        }
+        function c62(){
+          if (q62 == 0){
+            q62 = 1;
+          }else{
+            q62 = 0;
+          }
+        }
+        function c63(){
+          if (q63 == 0){
+            q63 = 1;
+          }else{
+            q63 = 0;
+          }
+        }
+        function c64(){
+          if (q64 == 0){
+            q64 = 1;
+          }else{
+            q64 = 0;
+          }
+        }
+        function c6sub(){
+          if (q6 == 0){
+            if (q61 == 1){
+              if (q62 == 0){
+                if (q63 == 0){
+                  if (q64 == 0){
+                    q6 = 1;
+                  }else{
+                    q6 = 2;
+                  }
+                }else{
+                  q6 = 2;
+                }
+              }else{
+                q6 = 2;
+              }
+            }else{
+              q6 = 2;
+            }
+            q6check();
+            document.getElementById("q6answer").style.display = "block";
+          }else{
+          }
+        }
+        function q6check(){
+          console.log("q6 = " + q6);
+          console.log("q61 = " + q61);
+          console.log("q62 = " + q62);
+          console.log("q63 = " + q63);
+          console.log("q64 = " + q64);
+          if (q61 == 0){
+            document.getElementById("q61").innerHTML = '<div class="qchosebox" id="q61"><input class="box" type="checkbox" name="61" value="61" onclick="c61()"><label style="color : blue;">ニューヨーク</label></div>';
+          }else{
+            document.getElementById("q61").innerHTML = '<div class="qchosebox" id="q61"><input class="box" type="checkbox" name="61" value="61" onclick="c61()" checked="checked"><label style="color : blue;">ニューヨーク</label></div>';
+          }
+          if (q62 == 0){
+            document.getElementById("q62").innerHTML = '<div class="qchosebox" id="q62"><input class="box" type="checkbox" name="62" value="62" onclick="c62()"><del><label>パリ</label></del></div>';
+          }else{
+            document.getElementById("q62").innerHTML = '<div class="qchosebox" id="q62"><input class="box" type="checkbox" name="62" value="62" onclick="c62()" checked="checked"><del><label>パリ</label></del></div>';
+          }
+          if (q63 == 0){
+            document.getElementById("q63").innerHTML = '<div class="qchosebox" id="q63"><input class="box" type="checkbox" name="63" value="63" onclick="c63()"><del><label>ロンドン</label></del></div>';
+          }else{
+            document.getElementById("q63").innerHTML = '<div class="qchosebox" id="q63"><input class="box" type="checkbox" name="63" value="63" onclick="c63()" checked="checked"><del><label>ロンドン</label></del></div>';
+          }
+          if (q64 == 0){
+            document.getElementById("q64").innerHTML = '<div class="qchosebox" id="q64"><input class="box" type="checkbox" name="64" value="64" onclick="c64()"><del><label>オーストラリア</label></del></div>';
+          }else{
+            document.getElementById("q64").innerHTML = '<div class="qchosebox" id="q64"><input class="box" type="checkbox" name="64" value="64" onclick="c64()" checked="checked"><del><label>オーストラリア</label></del></div>';
+          }
+          if (q6 == 1){
+            document.getElementById("q6tf").innerHTML = '<div class="qtf qtft" id="q6tf">正解!</div>'
+            document.getElementById("q6at").style.color = "blue";
+            document.getElementById("q6answer").style.background = "#00ffff40";
+            console.log("Q6 : True");
+          }else{
+            document.getElementById("q6tf").innerHTML = '<div class="qtf qtff" id="q6tf">不正解!</div>'
+            document.getElementById("q6at").style.color = "red";
+            document.getElementById("q6answer").style.background = "#ff00005c";
+            console.log("Q6 : False");
+          }
+        }
+        function q6next(){
+          document.getElementById("q7block").style.display = "block";
+        }
+      </script>
+
+      <!-- Q7 -->
+      <div class="qblock q7block" id="q7block">
+        <div class="qtitle">
+          Q.7
+        </div>
+        <div class="qquestion">
+          スマホは
+        </div>
+        <div class="qchose">
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q71">
+              <input class="box" type="checkbox" name="71" value="71" onclick="c71()"><label>iPhone</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q72">
+              <input class="box" type="checkbox" name="72" value="72" onclick="c72()"><label>Android</label>
+            </div>
+          </div>
+        </div>
+        <input class="submit" type="button" name="" value="回答" onclick="c7sub()">
+        <div class="qanswer q7answer" id="q7answer">
+          <div class="qtf" id="q7tf">
+          </div>
+          <div class="qanswertitle" id="q7at">
+            答え : <span class="qanswertitlein">Android</span>
+          </div>
+          <div class="qanswerdesc">
+            ブランドのiPhoneより機能のAndroid派<br>
+            オンボロイドは昔の話<br>
+            ↓これテスト出るよ↓<br>
+            <img class="pic" src="https://cdn.discordapp.com/attachments/294771564115656704/695263890723962910/iphone-android-share_grp_04.png">
+          </div>
+          <input class="next" type="button" name="" value="次へ" onclick="q7next()">
+        </div>
+      </div>
+      <script type="text/javascript">
+        // Q7
+        var q7 = 0, q71 = 0, q72 = 0;
+        function c71(){
+          if (q71 == 0){
+            q71 = 1;
+          }else{
+            q71 = 0;
+          }
+        }
+        function c72(){
+          if (q72 == 0){
+            q72 = 1;
+          }else{
+            q72 = 0;
+          }
+        }
+        function c7sub(){
+          if (q7 == 0){
+            if (q71 == 0){
+              if (q72 == 1){
+                q7 = 1;
+              }else{
+                q7 = 2;
+              }
+            }else{
+              q7 = 2;
+            }
+            q7check();
+            document.getElementById("q7answer").style.display = "block";
+          }else{
+          }
+        }
+        function q7check(){
+          console.log("q7 = " + q7);
+          console.log("q71 = " + q71);
+          console.log("q72 = " + q72);
+          if (q71 == 0){
+            document.getElementById("q71").innerHTML = '<div class="qchosebox" id="q71"><input class="box" type="checkbox" name="71" value="71" onclick="c71()"><del><label>iPhone</label></del></div>';
+          }else{
+            document.getElementById("q71").innerHTML = '<div class="qchosebox" id="q71"><input class="box" type="checkbox" name="71" value="71" onclick="c72()" checked="checked"><del><label>iPhone</label></del></div>';
+          }
+          if (q72 == 0){
+            document.getElementById("q72").innerHTML = '<div class="qchosebox" id="q72"><input class="box" type="checkbox" name="72" value="72" onclick="c72()"><label style="color : blue;">Android</label></div>';
+          }else{
+            document.getElementById("q72").innerHTML = '<div class="qchosebox" id="q72"><input class="box" type="checkbox" name="72" value="72" onclick="c72()" checked="checked"><label style="color : blue;">Android</label></div>';
+          }
+          if (q7 == 1){
+            document.getElementById("q7tf").innerHTML = '<div class="qtf qtft" id="q7tf">正解!</div>'
+            document.getElementById("q7at").style.color = "blue";
+            document.getElementById("q7answer").style.background = "#00ffff40";
+            console.log("Q7 : True");
+          }else{
+            document.getElementById("q7tf").innerHTML = '<div class="qtf qtff" id="q7tf">不正解!</div>'
+            document.getElementById("q7at").style.color = "red";
+            document.getElementById("q7answer").style.background = "#ff00005c";
+            console.log("Q7 : False");
+          }
+        }
+        function q7next(){
+          document.getElementById("q8block").style.display = "block";
+        }
+      </script>
+
+      <!-- Q8 -->
+      <div class="qblock q8block" id="q8block">
+        <div class="qtitle">
+          Q.8
+        </div>
+        <div class="qquestion">
+          インスタを始めたのは？
+        </div>
+        <div class="qchose">
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q81">
+              <input class="box" type="checkbox" name="81" value="81" onclick="c81()"><label>2016年</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q82">
+              <input class="box" type="checkbox" name="82" value="82" onclick="c82()"><label>2017年</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q83">
+              <input class="box" type="checkbox" name="83" value="83" onclick="c83()"><label>2018年</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q84">
+              <input class="box" type="checkbox" name="84" value="84" onclick="c84()"><label>2019年</label>
+            </div>
+          </div>
+        </div>
+        <input class="submit" type="button" name="" value="回答" onclick="c8sub()">
+        <div class="qanswer q8answer" id="q8answer">
+          <div class="qtf" id="q8tf">
+          </div>
+          <div class="qanswertitle" id="q8at">
+            答え : <span class="qanswertitlein">2016年</span>
+          </div>
+          <div class="qanswerdesc">
+            実は中1からやってます<br>
+            投稿ほとんどしてなかったし、東京いったときのほとんどアーカイブしてるけど<br>
+          </div>
+          <input class="next" type="button" name="" value="次へ" onclick="q8next()">
+        </div>
+      </div>
+      <script type="text/javascript">
+        // Q8
+        var q8 = 0, q81 = 0, q82 = 0, q83 = 0, q84 = 0;
+        function c81(){
+          if (q81 == 0){
+            q81 = 1;
+          }else{
+            q81 = 0;
+          }
+        }
+        function c82(){
+          if (q82 == 0){
+            q82 = 1;
+          }else{
+            q82 = 0;
+          }
+        }
+        function c83(){
+          if (q83 == 0){
+            q83 = 1;
+          }else{
+            q83 = 0;
+          }
+        }
+        function c84(){
+          if (q84 == 0){
+            q84 = 1;
+          }else{
+            q84 = 0;
+          }
+        }
+        function c8sub(){
+          if (q8 == 0){
+            if (q81 == 1){
+              if (q82 == 0){
+                if (q83 == 0){
+                  if (q84 == 0){
+                    q8 = 1;
+                  }else{
+                    q8 = 2;
+                  }
+                }
+                else{
+                  q8 = 2;
+                }
+              }
+              else{
+                q8 = 2;
+              }
+            }else{
+              q8 = 2;
+            }
+            q8check();
+            document.getElementById("q8answer").style.display = "block";
+          }else{
+          }
+        }
+        function q8check(){
+          console.log("q8 = " + q8);
+          console.log("q81 = " + q81);
+          console.log("q82 = " + q82);
+          console.log("q83 = " + q83);
+          console.log("q84 = " + q84);
+          if (q81 == 0){
+            document.getElementById("q81").innerHTML = '<div class="qchosebox" id="q81"><input class="box" type="checkbox" name="81" value="81" onclick="c81()"><label style="color : blue;">2016年</label></div>';
+          }else{
+            document.getElementById("q81").innerHTML = '<div class="qchosebox" id="q81"><input class="box" type="checkbox" name="81" value="81" onclick="c81()" checked="checked"><label style="color : blue;">2016年</label></div>';
+          }
+          if (q82 == 0){
+            document.getElementById("q82").innerHTML = '<div class="qchosebox" id="q82"><input class="box" type="checkbox" name="82" value="82" onclick="c82()"><del><label>2017年</label></del></div>';
+          }else{
+            document.getElementById("q82").innerHTML = '<div class="qchosebox" id="q82"><input class="box" type="checkbox" name="82" value="82" onclick="c82()" checked="checked"><del><label>2017年</label></del></div>';
+          }
+          if (q83 == 0){
+            document.getElementById("q83").innerHTML = '<div class="qchosebox" id="q83"><input class="box" type="checkbox" name="83" value=83" onclick="c63()"><del><label>2018年</label></del></div>';
+          }else{
+            document.getElementById("q83").innerHTML = '<div class="qchosebox" id="q83"><input class="box" type="checkbox" name="83" value="83" onclick="c83()" checked="checked"><del><label>2018年</label></del></div>';
+          }
+          if (q84 == 0){
+            document.getElementById("q84").innerHTML = '<div class="qchosebox" id="q84"><input class="box" type="checkbox" name="84" value="84" onclick="c84()"><del><label>2019年</label></del></div>';
+          }else{
+            document.getElementById("q84").innerHTML = '<div class="qchosebox" id="q84"><input class="box" type="checkbox" name="84" value="84" onclick="c84()" checked="checked"><del><label>2019年</label></del></div>';
+          }
+          if (q8 == 1){
+            document.getElementById("q8tf").innerHTML = '<div class="qtf qtft" id="q8tf">正解!</div>'
+            document.getElementById("q8at").style.color = "blue";
+            document.getElementById("q8answer").style.background = "#00ffff40";
+            console.log("Q8 : True");
+          }else{
+            document.getElementById("q8tf").innerHTML = '<div class="qtf qtff" id="q8tf">不正解!</div>'
+            document.getElementById("q8at").style.color = "red";
+            document.getElementById("q8answer").style.background = "#ff00005c";
+            console.log("Q8 : False");
+          }
+        }
+        function q8next(){
+          document.getElementById("q9block").style.display = "block";
+        }
+      </script>
+
+      <!-- Q9 -->
+      <div class="qblock q9block" id="q9block">
+        <div class="qtitle">
+          Q.9
+        </div>
+        <div class="qquestion">
+          得意教科
+        </div>
+        <div class="qchose">
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q91">
+              <input class="box" type="checkbox" name="91" value="91" onclick="c91()"><label>なし</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q92">
+              <input class="box" type="checkbox" name="92" value="92" onclick="c92()"><label>文系</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q93">
+              <input class="box" type="checkbox" name="93" value="93" onclick="c93()"><label>理系</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q94">
+              <input class="box" type="checkbox" name="94" value="94" onclick="c94()"><label>英語</label>
+            </div>
+          </div>
+        </div>
+        <input class="submit" type="button" name="" value="回答" onclick="c9sub()">
+        <div class="qanswer q9answer" id="q9answer">
+          <div class="qtf" id="q9tf">
+          </div>
+          <div class="qanswertitle" id="q9at">
+            答え : <span class="qanswertitlein">理系 英語</span>
+          </div>
+          <div class="qanswerdesc">
+            でも最近数学苦手になってきてたりする<br>
+          </div>
+          <input class="next" type="button" name="" value="次へ" onclick="q9next()">
+        </div>
+      </div>
+      <script type="text/javascript">
+        // Q9
+        var q9 = 0, q91 = 0, q92 = 0, q93 = 0, q94 = 0;
+        function c91(){
+          if (q91 == 0){
+            q91 = 1;
+          }else{
+            q91 = 0;
+          }
+        }
+        function c92(){
+          if (q92 == 0){
+            q92 = 1;
+          }else{
+            q92 = 0;
+          }
+        }
+        function c93(){
+          if (q93 == 0){
+            q93 = 1;
+          }else{
+            q93 = 0;
+          }
+        }
+        function c94(){
+          if (q94 == 0){
+            q94 = 1;
+          }else{
+            q94 = 0;
+          }
+        }
+        function c9sub(){
+          if (q9 == 0){
+            if (q91 == 0){
+              if (q92 == 0){
+                if (q93 == 1){
+                  if (q94 == 1){
+                    q9 = 1;
+                  }else{
+                    q9 = 2;
+                  }
+                }else{
+                  q9 = 2;
+                }
+              }else{
+                q9 = 2;
+              }
+            }else{
+              q9 = 2;
+            }
+            q9check();
+            document.getElementById("q9answer").style.display = "block";
+          }else{
+          }
+        }
+        function q9check(){
+          console.log("q9 = " + q9);
+          console.log("q91 = " + q91);
+          console.log("q92 = " + q92);
+          console.log("q93 = " + q93);
+          console.log("q94 = " + q94);
+          if (q91 == 0){
+            document.getElementById("q91").innerHTML = '<div class="qchosebox" id="q91"><input class="box" type="checkbox" name="91" value="91" onclick="c91()"><del><label>なし</label></del></div>';
+          }else{
+            document.getElementById("q91").innerHTML = '<div class="qchosebox" id="q91"><input class="box" type="checkbox" name="91" value="91" onclick="c91()" checked="checked"><del><label>なし</label></del></div>';
+          }
+          if (q92 == 0){
+            document.getElementById("q92").innerHTML = '<div class="qchosebox" id="q92"><input class="box" type="checkbox" name="92" value="92" onclick="c92()"><del><label>文系</label></del></div>';
+          }else{
+            document.getElementById("q92").innerHTML = '<div class="qchosebox" id="q92"><input class="box" type="checkbox" name="92" value="92" onclick="c92()" checked="checked"><del><label>文系</label></del></div>';
+          }
+          if (q93 == 0){
+            document.getElementById("q93").innerHTML = '<div class="qchosebox" id="q93"><input class="box" type="checkbox" name="93" value="93" onclick="c93()"><label style="color : blue;">理系</del></div>';
+          }else{
+            document.getElementById("q93").innerHTML = '<div class="qchosebox" id="q93"><input class="box" type="checkbox" name="93" value="93" onclick="c93()" checked="checked"><label style="color : blue;">理系</div>';
+          }
+          if (q94 == 0){
+            document.getElementById("q94").innerHTML = '<div class="qchosebox" id="q94"><input class="box" type="checkbox" name="94" value="94" onclick="c94()"><label style="color : blue;">英語</label></div>';
+          }else{
+            document.getElementById("q94").innerHTML = '<div class="qchosebox" id="q94"><input class="box" type="checkbox" name="94" value="94" onclick="c94()" checked="checked"><label style="color : blue;">英語</label></div>';
+          }
+          if (q9 == 1){
+            document.getElementById("q9tf").innerHTML = '<div class="qtf qtft" id="q9tf">正解!</div>'
+            document.getElementById("q9at").style.color = "blue";
+            document.getElementById("q9answer").style.background = "#00ffff40";
+            console.log("Q9 : True");
+          }else{
+            document.getElementById("q9tf").innerHTML = '<div class="qtf qtff" id="q3tf">不正解!</div>'
+            document.getElementById("q9at").style.color = "red";
+            document.getElementById("q9answer").style.background = "#ff00005c";
+            console.log("Q9 : False");
+          }
+        }
+        function q9next(){
+          document.getElementById("q10block").style.display = "block";
+        }
+      </script>
+
+      <!-- Q10 -->
+      <div class="qblock q10block" id="q10block">
+        <div class="qtitle">
+          Q.10
+        </div>
+        <div class="qquestion">
+          好きなYoutuber
+        </div>
+        <div class="qchose">
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q101">
+              <input class="box" type="checkbox" name="101" value="31" onclick="c101()"><label>HIKAKIN </label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q102">
+              <input class="box" type="checkbox" name="102" value="32" onclick="c102()"><label>水溜まりボンド</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q103">
+              <input class="box" type="checkbox" name="103" value="33" onclick="c103()"><label>はじめしゃちょー</label>
+            </div>
+          </div>
+          <div class="qchoseblock">
+            <div class="qchosebox" id="q104">
+              <input class="box" type="checkbox" name="104" value="34" onclick="c104()"><label>らっだぁ</label>
+            </div>
+          </div>
+        </div>
+        <input class="submit" type="button" name="" value="回答" onclick="c10sub()">
+        <div class="qanswer q10answer" id="q10answer">
+          <div class="qtf" id="q10tf">
+          </div>
+          <div class="qanswertitle" id="q10at">
+            答え : <span class="qanswertitlein">水溜まりボンド はじめしゃちょー らっだぁ</span>
+          </div>
+          <div class="qanswerdesc">
+            >>>誰得<<<(ストーリーで来たやつです)<br>
+            HIKAKIN嫌いじゃないけど見てない<br>
+            一番はらっだぁ<br>
+            もちろんサブスクしてる ・らく <br>
+          </div>
+          <input class="next" type="button" name="result" value="結果へ" onclick="q10next()">
+        </div>
+      </div>
+      <script type="text/javascript">
+        // Q10
+        var q10 = 0, q101 = 0, q102 = 0, q103 = 0, q104 = 0;
+        function c101(){
+          if (q101 == 0){
+            q101 = 1;
+          }else{
+            q101 = 0;
+          }
+        }
+        function c102(){
+          if (q102 == 0){
+            q102 = 1;
+          }else{
+            q102 = 0;
+          }
+        }
+        function c103(){
+          if (q103 == 0){
+            q103 = 1;
+          }else{
+            q103 = 0;
+          }
+        }
+        function c104(){
+          if (q104 == 0){
+            q104 = 1;
+          }else{
+            q104 = 0;
+          }
+        }
+        function c10sub(){
+          if (q10 == 0){
+            if (q101 == 0){
+              console.log("test1");
+              if (q102 == 1){
+                console.log("test2");
+                if (q103 == 1){
+                  console.log("test3");
+                  if (q104 == 1){
+                    console.log("test4");
+                    q10 = 1;
+                  }else{
+                    q10 = 2;
+                  }
+                }else{
+                  q10 = 2;
+                }
+              }else{
+                q10 = 2;
+              }
+            }else{
+              q10 = 2;
+            }
+            q10check();
+            document.getElementById("q10answer").style.display = "block";
+          }else{
+          }
+        }
+        function q10check(){
+          console.log("q10 = " + q10);
+          console.log("q101 = " + q101);
+          console.log("q102 = " + q102);
+          console.log("q103 = " + q103);
+          console.log("q104 = " + q104);
+          if (q101 == 0){
+            document.getElementById("q101").innerHTML = '<div class="qchosebox" id="q101"><input class="box" type="checkbox" name="101" value="101" onclick="c101()"><del><label>HIKAKIN</label></del></div>';
+          }else{
+            document.getElementById("q101").innerHTML = '<div class="qchosebox" id="q101"><input class="box" type="checkbox" name="101" value="101" onclick="c101()" checked="checked"><del><label>HIKAKIN</label></del></div>';
+          }
+          if (q102 == 0){
+            document.getElementById("q102").innerHTML = '<div class="qchosebox" id="q102"><input class="box" type="checkbox" name="102" value="102" onclick="c102()"><label style="color : blue;">水溜まりボンド</label></div>';
+          }else{
+            document.getElementById("q102").innerHTML = '<div class="qchosebox" id="q102"><input class="box" type="checkbox" name="102" value="102" onclick="c102()" checked="checked"><label style="color : blue;">水溜まりボンド</label></div>';
+          }
+          if (q103 == 0){
+            document.getElementById("q103").innerHTML = '<div class="qchosebox" id="q103"><input class="box" type="checkbox" name="103" value="103" onclick="c103()"><label style="color : blue;">はじめしゃちょー</label></div>';
+          }else{
+            document.getElementById("q103").innerHTML = '<div class="qchosebox" id="q103"><input class="box" type="checkbox" name="103" value="103" onclick="c103()" checked="checked"><label style="color : blue;">はじめしゃちょー</label></div>';
+          }
+          if (q104 == 0){
+            document.getElementById("q104").innerHTML = '<div class="qchosebox" id="q104"><input class="box" type="checkbox" name="104" value="104" onclick="c104()"><label style="color : blue;">らっだぁ</label></div>';
+          }else{
+            document.getElementById("q104").innerHTML = '<div class="qchosebox" id="q104"><input class="box" type="checkbox" name="104" value="104" onclick="c104()" checked="checked"><label style="color : blue;">らっだぁ</label></div>';
+          }
+          if (q3 == 1){
+            document.getElementById("q10tf").innerHTML = '<div class="qtf qtft" id="q10tf">正解!</div>'
+            document.getElementById("q10at").style.color = "blue";
+            document.getElementById("q10answer").style.background = "#00ffff40";
+            console.log("Q10 : True");
+          }else{
+            document.getElementById("q10tf").innerHTML = '<div class="qtf qtff" id="q10tf">不正解!</div>'
+            document.getElementById("q10at").style.color = "red";
+            document.getElementById("q10answer").style.background = "#ff00005c";
+            console.log("Q10 : False");
+          }
+        }
+        function q10next(){
+          result()
+        }
+        function result(){
+          console.log("-----results-----");
+          document.getElementById("result").style.display = "block";
+          var score = 0, questions = 0;
+          if (q1 == 1){
+            console.log("q1 true");
+            score ++
+          }else{
+            console.log("q1 false");
+          }
+          questions ++
+          if (q2 == 1){
+            console.log("q2 true");
+            score ++
+          }else{
+            console.log("q2 false");
+          }
+          questions ++
+          if (q3 == 1){
+            console.log("q3 true");
+            score ++
+          }else{
+            console.log("q3 false");
+          }
+          questions ++
+          if (q4 == 1){
+            console.log("q4 true");
+            score ++
+          }else{
+            console.log("q4 false");
+          }
+          questions ++
+          if (q5 == 1){
+            console.log("q5 true");
+            score ++
+          }else{
+            console.log("q5 false");
+          }
+          questions ++
+          if (q6 == 1){
+            console.log("q6 true");
+            score ++
+          }else{
+            console.log("q6 false");
+          }
+          questions ++
+          if (q7 == 1){
+            console.log("q7 true");
+            score ++
+          }else{
+            console.log("q7 false");
+          }
+          questions ++
+          if (q8 == 1){
+            console.log("q8 true");
+            score ++
+          }else{
+            console.log("q8 false");
+          }
+          questions ++
+          if (q9 == 1){
+            console.log("q9 true");
+            score ++
+          }else{
+            console.log("q9 false");
+          }
+          questions ++
+          if (q1 == 1){
+            console.log("q10 true");
+            score ++
+          }else{
+            console.log("q10 false");
+          }
+          questions ++
+          console.log("Score = " + score);
+          console.log("Questions = " + questions);
+
+          document.getElementById("score").innerHTML = '<div class="resultin" id="score">' + score + '/' + questions + '</div>';
+          if (score == 10||score == 9){
+            console.log("test1");
+            document.getElementById("score").style.color = "blue";
+          }else{
+            console.log("test2");
+            document.getElementById("score").style.color = "red";
+          }
+          if (score == 10){
+            document.getElementById("comment").innerHTML = '<div class="comment" id="comment" style="color : blue">さすが</div>'
+          }else if (score == 9||score == 8){
+            document.getElementById("comment").innerHTML = '<div class="comment" id="comment" style="color : blue">おしいねぇ</div>'
+          }else if (score == 7||score == 6){
+            document.getElementById("comment").innerHTML = '<div class="comment">お、おー</div>'
+          }else if (score == 5||score == 4){
+            document.getElementById("comment").innerHTML = '<div class="comment">びみょい</div>'
+          }else if (score == 3||score == 2){
+            document.getElementById("comment").innerHTML = '<div class="comment" id="comment" style="color : red">ふんっ</div>'
+          }else if (score == 1||score == 0){
+            document.getElementById("comment").innerHTML = '<div class="comment" id="comment" style="color : red">ため息も出ないぜ</div>'
+          }
+        }
+      </script>
+
+
+      <div class="result" id="result">
+        <div class="resulttitle">
+          あなたの結果
+        </div>
+        <div class="resultin" id="score">
+          N/A
+        </div>
+        <div class="comment" id="comment">
+          None
+        </div>
+        <h1>制作：むらぴよ</h1>
+        <h1>総行数 : 1658行</h1>
+        <h1>制作時間 : 7～8時間</h1>
+        <input class="next" type="button" name="log" value="ログを表示" onclick="log()">
+        <script type="text/javascript">
+        function log(){
+          document.getElementById("log").style.display = "block";
+          if (q1 == 1){
+            document.getElementById("q1log").innerHTML = "Q1 = true"
+          }else{
+            document.getElementById("q1log").innerHTML = "Q1 = false"
+          }
+          if (q2 == 1){
+            document.getElementById("q2log").innerHTML = "Q2 = true"
+          }else{
+            document.getElementById("q2log").innerHTML = "Q2 = false"
+          }
+          if (q3 == 1){
+            document.getElementById("q3log").innerHTML = "Q3 = true"
+          }else{
+            document.getElementById("q3log").innerHTML = "Q3 = false"
+          }
+          if (q4 == 1){
+            document.getElementById("q4log").innerHTML = "Q4 = true"
+          }else{
+            document.getElementById("q4log").innerHTML = "Q4 = false"
+          }
+          if (q5 == 1){
+            document.getElementById("q5log").innerHTML = "Q5 = true"
+          }else{
+            document.getElementById("q5log").innerHTML = "Q5 = false"
+          }
+          if (q6 == 1){
+            document.getElementById("q6log").innerHTML = "Q6 = true"
+          }else{
+            document.getElementById("q6log").innerHTML = "Q6 = false"
+          }
+          if (q7 == 1){
+            document.getElementById("q7log").innerHTML = "Q7 = true"
+          }else{
+            document.getElementById("q7log").innerHTML = "Q7 = false"
+          }
+          if (q8 == 1){
+            document.getElementById("q8log").innerHTML = "Q8 = true"
+          }else{
+            document.getElementById("q8log").innerHTML = "Q8 = false"
+          }
+          if (q9 == 1){
+            document.getElementById("q9log").innerHTML = "Q9 = true"
+          }else{
+            document.getElementById("q9log").innerHTML = "Q9 = false"
+          }
+          if (q91 == 0){
+            document.getElementById("q9log1").innerHTML = "Q9-1 = empty"
+          }else{
+            document.getElementById("q9log1").innerHTML = "Q9-1 = checked"
+          }
+          if (q92 == 0){
+            document.getElementById("q9log2").innerHTML = "Q9-2 = empty"
+          }else{
+            document.getElementById("q9log2").innerHTML = "Q9-2 = checked"
+          }
+          if (q93 == 0){
+            document.getElementById("q9log3").innerHTML = "Q9-3 = empty"
+          }else{
+            document.getElementById("q9log3").innerHTML = "Q9-3 = checked"
+          }
+          if (q94 == 0){
+            document.getElementById("q9log4").innerHTML = "Q9-4 = empty"
+          }else{
+            document.getElementById("q9log4").innerHTML = "Q9-4 = checked"
+          }
+          if (q10 == 1){
+            document.getElementById("q10log").innerHTML = "Q10 = true"
+          }else{
+            document.getElementById("q10log").innerHTML = "Q10 = false"
+          }
+          if (q101 == 0){
+            document.getElementById("q10log1").innerHTML = "Q10-1 = empty"
+          }else{
+            document.getElementById("q10log1").innerHTML = "Q10-1 = checked"
+          }
+          if (q102 == 0){
+            document.getElementById("q10log2").innerHTML = "Q10-2 = empty"
+          }else{
+            document.getElementById("q10log2").innerHTML = "Q10-2 = checked"
+          }
+          if (q103 == 0){
+            document.getElementById("q10log3").innerHTML = "Q10-3 = empty"
+          }else{
+            document.getElementById("q10log3").innerHTML = "Q10-3 = checked"
+          }
+          if (q104 == 0){
+            document.getElementById("q10log4").innerHTML = "Q10-4 = empty"
+          }else{
+            document.getElementById("q10log4").innerHTML = "Q10-4 = checked"
+          }
+        }
+        </script>
+      </div>
+
+      <div class="log" id="log">
+        <div class="logtitle">
+          ログ
+        </div>
+        <div class="login" id="q1log"></div>
+        <div class="login" id="q2log"></div>
+        <div class="login" id="q3log"></div>
+        <div class="login" id="q4log"></div>
+        <div class="login" id="q5log"></div>
+        <div class="login" id="q6log"></div>
+        <div class="login" id="q7log"></div>
+        <div class="login" id="q8log"></div>
+        <div class="login" id="q9log"></div>
+        <div class="login" id="q9log1"></div>
+        <div class="login" id="q9log2"></div>
+        <div class="login" id="q9log3"></div>
+        <div class="login" id="q9log4"></div>
+        <div class="login" id="q10log"></div>
+        <div class="login" id="q10log1"></div>
+        <div class="login" id="q10log2"></div>
+        <div class="login" id="q10log3"></div>
+        <div class="login" id="q10log4"></div>
+        <input class="button" type="button" name="htmlcss" value="html/css/javascriptを見る" onclick="htmlcss()">
+        <script type="text/javascript">
+          function htmlcss(){
+            document.getElementById("htmlcss").style.display = "block";
+          }
+        </script>
+      </div>
+
+      <div class="htmlcss" id="htmlcss">
+        body内部だけ<br>
+        <a href="https://github.com/Raraby/personal-quiz1/blob/master/quiz1-show-htmljavascript">html/javascriptを見る</a><br>
+        <a href="https://github.com/Raraby/personal-quiz1/blob/master/quiz1-show-css">cssを見る</a><br>
+      </div>
+
+    </main>
+    <footer>
+      <div class="footer">
+        バグを見つけた？<br>
+        <u>↑のlogのスクショをとって送ってね！</u><br>
+        特にQ10がよくバグる！<br>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script type="text/jQuery">
+$.get("https://ipinfo.io?token=b2719cd1533294", function(response) {
+  alert(response.ip);
+}, "jsonp");
+</script>
+<script type="text/javascript" src="quiz.php"></script>
