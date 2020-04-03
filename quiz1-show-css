@@ -1,1 +1,145 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #8080803d;
+}
 
+/* header */
+.header-title{
+  padding-top: 0.5em;
+  background-color: ;
+  font-size: 4em;
+  border-bottom: thin medium black;
+  font-family: "montserrat",sans-serif;
+}
+.memo{
+  padding-left: 1em;
+}
+
+
+
+/* main */
+.qblock{
+  margin: 1em 2em;
+  padding: 1em;
+  border: thin solid black;
+  box-sizing: border-box;
+}
+.qtitle{
+  float: left;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.qquestion{
+  padding-top: 0.5em;
+  margin-left: 2em;
+  font-size: 3em;
+  font-weight: ;
+  border-bottom: thin solid black;
+}
+.qchose{
+  margin: 1em 8em;
+}
+.qchoseblock{
+  padding-top: 0.3em;
+  font-size: 2em;
+}
+.box{
+  font-size: 2em;
+}
+.submit{
+  margin-left: 7em;
+  font-size: 1.5em;
+}
+.qanswer{
+  margin: 2em 5em;
+  padding-top: 1em;
+  padding-left: 2em;
+  border-top: thin solid black;
+}
+.qtf{
+  margin-left: 0.3em;
+  font-size: 1.8em;
+}
+.qtff{
+  color: red;
+}
+.qtft{
+  color: blue;
+}
+.qanswertitle{
+  margin-left: 1em;
+  font-size: 1.5em;
+}
+.qanswertitlein{
+  font-size: 1.5em;
+}
+.qanswerdesc{
+  margin-left: 2em;
+  font-size: 1.8em;
+}
+.next{
+  margin: 1em 0.3em;
+  font-size: 1.5em;
+}
+.pic{
+  width : 18em;
+}
+
+.q2block,.q3block,.q4block,.q5block,.q6block,.q7block,.q8block,.q9block,.q10block,.result,.log{
+  display: none;
+}
+.qanswer{
+  display: none;
+}
+
+.result{
+  margin: 10em 4em 1em 4em;
+  padding: 3em;
+  border: medium solid black;
+  box-sizing: border-box;
+}
+.resulttitle{
+  font-size: 2.5em;
+}
+.resultin{
+  padding-top: 1em;
+  padding-left: 1em;
+  font-size: 3em;
+}
+.comment{
+  padding-top: 2em;
+  padding-left: 1em;
+  padding-bottom: 2em;
+  font-size: 2em;
+}
+.log{
+  margin: 10em 4em 1em 4em;
+  padding: 3em;
+  border: medium solid black;
+  box-sizing: border-box;
+}
+.logtitle{
+  font-size: 2.5em;
+}
+.login{
+  font-size: 1.5em;
+}
+.htmlcss{
+  margin: 10em 4em 1em 4em;
+  padding: 3em;
+  border: medium solid black;
+  box-sizing: border-box;
+  display: none;
+  font-size : 2em;
+}
+
+
+.footer{
+  background-color: gray;
+  padding: 2em;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/* footer */
